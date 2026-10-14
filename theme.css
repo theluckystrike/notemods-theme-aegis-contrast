@@ -1,0 +1,316 @@
+/* Aegis Contrast — accessible Obsidian theme (high contrast)
+ * Original CSS. MIT licensed. No network assets. Supports light + dark.
+ * Emphasis: maximal separation, 2px rules, solid focus bars, always-underlined links.
+ */
+
+body {
+  --aegis-radius: 0px;
+  --aegis-hairline: 2px;
+  --aegis-focus-ring: 4px;
+  --aegis-heading-font: "Helvetica Neue", Helvetica, Arial, "Segoe UI", system-ui, sans-serif;
+  --font-text-theme: "Helvetica Neue", Helvetica, Arial, "Segoe UI", Roboto, system-ui, sans-serif;
+  --font-interface-theme: "Helvetica Neue", Helvetica, Arial, "Segoe UI", Roboto, system-ui, sans-serif;
+  --font-monospace-theme: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --font-text-size: 17px;
+  --line-height-normal: 1.62;
+  --p-spacing: 1.1em;
+  /* High-contrast structure: a deliberate, oversized heading scale (not Obsidian defaults). */
+  --h1-size: 2.125em;
+  --h2-size: 1.5em;
+  --h3-size: 1.25em;
+  --h4-size: 1.125em;
+  --h5-size: 1.03em;
+  --h6-size: 0.94em;
+  --h1-weight: 800; --h2-weight: 800; --h3-weight: 750;
+  --h4-weight: 700; --h5-weight: 700; --h6-weight: 700;
+  --radius-s: var(--aegis-radius);
+  --radius-m: var(--aegis-radius);
+  --radius-l: var(--aegis-radius);
+  --link-decoration: underline;
+  --link-decoration-hover: underline;
+  --link-decoration-thickness: 2px;
+  --link-external-decoration: underline;
+}
+
+.theme-dark {
+  --aegis-bg: #000000;
+  --aegis-surface: #0b0b0b;
+  --aegis-elevated: #141414;
+  --aegis-border: #9a9a9a;
+  --aegis-text: #ffffff;
+  --aegis-muted: #d0d0d0;
+  --aegis-faint: #a6a6a6;
+  --aegis-link: #ffe100;
+  --aegis-link-hover: #ffffff;
+  --aegis-focus: #00e0ff;
+  --aegis-accent: #ffe100;
+  --aegis-on-accent: #000000;
+
+  --background-primary: var(--aegis-bg);
+  --background-primary-alt: var(--aegis-surface);
+  --background-secondary: var(--aegis-surface);
+  --background-secondary-alt: var(--aegis-elevated);
+  --background-modifier-border: var(--aegis-border);
+  --background-modifier-border-hover: #ffffff;
+  --background-modifier-border-focus: var(--aegis-focus);
+  --background-modifier-hover: #1f1f1f;
+  --background-modifier-form-field: #0b0b0b;
+  --text-normal: var(--aegis-text);
+  --text-muted: var(--aegis-muted);
+  --text-faint: var(--aegis-faint);
+  --text-accent: var(--aegis-accent);
+  --text-accent-hover: #ffffff;
+  --text-on-accent: var(--aegis-on-accent);
+  --text-selection: #3a3a00;
+  --text-highlight-bg: #ffe100;
+  --caret-color: #00e0ff;
+  --link-color: var(--aegis-link);
+  --link-color-hover: var(--aegis-link-hover);
+  --link-external-color: var(--aegis-link);
+  --interactive-normal: #1a1a1a;
+  --interactive-hover: #2a2a2a;
+  --interactive-accent: var(--aegis-accent);
+  --interactive-accent-hover: #ffffff;
+  --h1-color: #ffffff;
+  --h2-color: #ffffff;
+  --h3-color: #ffffff;
+  --h4-color: #ffffff;
+  --h5-color: #ffffff;
+  --h6-color: #ffffff;
+  --table-border-color: var(--aegis-border);
+  --table-header-border-color: #ffffff;
+  --table-header-color: #ffffff;
+  --table-text-color: #ffffff;
+  --table-background: var(--aegis-bg);
+  --table-header-background: #1a1a1a;
+  --checkbox-border-color: #ffffff;
+  --checkbox-marker-color: #000000;
+  --checkbox-color: var(--aegis-accent);
+  --tab-text-color: #ffffff;
+  --tab-text-color-active: #ffffff;
+  --tab-text-color-focused-active: #ffffff;
+  --tab-background-active: #000000;
+  --tab-divider-color: #ffffff;
+  --tab-outline-color: #ffffff;
+}
+
+.theme-light {
+  --aegis-bg: #ffffff;
+  --aegis-surface: #f2f2f2;
+  --aegis-elevated: #e6e6e6;
+  --aegis-border: #4a4a4a;
+  --aegis-text: #000000;
+  --aegis-muted: #2e2e2e;
+  --aegis-faint: #4a4a4a;
+  --aegis-link: #0033cc;
+  --aegis-link-hover: #000000;
+  --aegis-focus: #005fcc;
+  --aegis-accent: #0033cc;
+  --aegis-on-accent: #ffffff;
+
+  --background-primary: var(--aegis-bg);
+  --background-primary-alt: var(--aegis-surface);
+  --background-secondary: var(--aegis-surface);
+  --background-secondary-alt: var(--aegis-elevated);
+  --background-modifier-border: var(--aegis-border);
+  --background-modifier-border-hover: #000000;
+  --background-modifier-border-focus: var(--aegis-focus);
+  --background-modifier-hover: #e2e2e2;
+  --background-modifier-form-field: #ffffff;
+  --text-normal: var(--aegis-text);
+  --text-muted: var(--aegis-muted);
+  --text-faint: var(--aegis-faint);
+  --text-accent: var(--aegis-accent);
+  --text-accent-hover: #000000;
+  --text-on-accent: var(--aegis-on-accent);
+  --text-selection: #cfe0ff;
+  --text-highlight-bg: #ffe100;
+  --caret-color: #005fcc;
+  --link-color: var(--aegis-link);
+  --link-color-hover: var(--aegis-link-hover);
+  --link-external-color: var(--aegis-link);
+  --interactive-normal: #e6e6e6;
+  --interactive-hover: #d6d6d6;
+  --interactive-accent: var(--aegis-accent);
+  --interactive-accent-hover: #002a99;
+  --h1-color: #000000;
+  --h2-color: #000000;
+  --h3-color: #000000;
+  --h4-color: #000000;
+  --h5-color: #000000;
+  --h6-color: #000000;
+  --table-border-color: var(--aegis-border);
+  --table-header-border-color: #000000;
+  --table-header-color: #000000;
+  --table-text-color: #000000;
+  --table-background: var(--aegis-bg);
+  --table-header-background: #e6e6e6;
+  --checkbox-border-color: #000000;
+  --checkbox-marker-color: #ffffff;
+  --checkbox-color: var(--aegis-accent);
+  --tab-text-color: #000000;
+  --tab-text-color-active: #000000;
+  --tab-text-color-focused-active: #000000;
+  --tab-background-active: #ffffff;
+  --tab-divider-color: #000000;
+  --tab-outline-color: #000000;
+}
+
+/* Typography — heavy geometric scale; every level carries a non-colour cue (rule/bar/caps) */
+.markdown-rendered h1, .markdown-preview-view h1, .HyperMD-header-1 {
+  font-family: var(--aegis-heading-font);
+  font-size: 2.125em; font-weight: 800; line-height: 1.14; letter-spacing: -0.015em;
+  border-bottom: 3px solid var(--aegis-border);
+  padding-bottom: 0.22em;
+}
+.markdown-rendered h2, .markdown-preview-view h2, .HyperMD-header-2 {
+  font-family: var(--aegis-heading-font);
+  font-size: 1.5em; font-weight: 800; line-height: 1.2; letter-spacing: -0.01em;
+  border-bottom: 2px solid var(--aegis-border);
+  padding-bottom: 0.18em;
+}
+.markdown-rendered h3, .markdown-preview-view h3, .HyperMD-header-3 {
+  font-family: var(--aegis-heading-font);
+  font-size: 1.25em; font-weight: 750;
+  border-left: 4px solid var(--aegis-border); padding-left: 0.45em;
+}
+.markdown-rendered h4, .markdown-preview-view h4, .HyperMD-header-4 {
+  font-size: 1.125em; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+.markdown-rendered h5, .markdown-preview-view h5, .HyperMD-header-5 {
+  font-size: 1.03em; font-weight: 700;
+  font-variant: small-caps; letter-spacing: 0.05em;
+}
+.markdown-rendered h6, .markdown-preview-view h6, .HyperMD-header-6 {
+  font-size: 0.94em; font-weight: 700; color: var(--aegis-muted);
+  text-transform: uppercase; letter-spacing: 0.09em;
+}
+.markdown-rendered p { max-width: 78ch; }
+
+/* Links: always underlined, never colour-only */
+.markdown-rendered a, .markdown-rendered a.internal-link, .markdown-rendered a.external-link,
+.cm-s-obsidian span.cm-link, .cm-s-obsidian span.cm-hmd-internal-link, .cm-s-obsidian span.cm-url {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+.markdown-rendered a:hover { text-decoration-thickness: 3px; }
+.markdown-rendered a.external-link::after { content: " \2197"; font-weight: 700; }
+.markdown-rendered a.is-unresolved { text-decoration-style: dashed; opacity: 1; }
+
+/* Lists */
+.markdown-rendered ul, .markdown-rendered ol { padding-inline-start: 1.6em; }
+.markdown-rendered li { margin-block: 0.35em; }
+.markdown-rendered ul > li::marker { color: var(--aegis-focus); font-weight: 700; }
+.markdown-rendered ol > li::marker { color: var(--aegis-focus); font-weight: 700; }
+
+/* Tasks */
+.markdown-rendered input[type="checkbox"].task-list-item-checkbox,
+input.task-list-item-checkbox {
+  width: 20px; height: 20px;
+  border: 2px solid var(--checkbox-border-color);
+  border-radius: 2px;
+}
+.markdown-rendered li.task-list-item.is-checked { color: var(--aegis-muted); }
+.markdown-rendered li.task-list-item.is-checked .task-list-item-checkbox { border-width: 2px; }
+
+/* Callouts: strong left bar + full border, icon-independent meaning via title */
+.callout {
+  border: var(--aegis-hairline) solid var(--aegis-border);
+  border-left-width: 8px;
+  border-radius: 0;
+  background-color: var(--aegis-surface);
+}
+.callout .callout-title { font-weight: 800; }
+.callout .callout-title-inner { text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.9em; }
+
+/* Tables */
+.markdown-rendered table, .cm-table-widget table {
+  border: var(--aegis-hairline) solid var(--aegis-border);
+  border-collapse: collapse;
+}
+.markdown-rendered th, .markdown-rendered td { border: var(--aegis-hairline) solid var(--aegis-border); padding: 0.5em 0.7em; }
+.markdown-rendered thead th { border-bottom-width: 3px; }
+
+/* Code */
+.markdown-rendered code, .cm-s-obsidian span.cm-inline-code {
+  font-family: var(--font-monospace-theme);
+  background-color: var(--aegis-elevated);
+  border: 1px solid var(--aegis-border);
+  border-radius: 0;
+  padding: 0.1em 0.3em;
+}
+.markdown-rendered pre, .cm-s-obsidian .HyperMD-codeblock {
+  background-color: var(--aegis-surface);
+  border: var(--aegis-hairline) solid var(--aegis-border);
+  border-radius: 0;
+}
+.markdown-rendered pre code { border: 0; background: transparent; }
+
+/* Blockquote */
+.markdown-rendered blockquote {
+  border-inline-start: 8px solid var(--aegis-border);
+  background-color: var(--aegis-surface);
+  padding: 0.4em 1em;
+}
+
+/* Search */
+.search-input-container input, .document-search-container input {
+  border: var(--aegis-hairline) solid var(--aegis-border);
+  background-color: var(--background-modifier-form-field);
+}
+.search-result-file-title { font-weight: 700; }
+.search-result-file-match { border-bottom: 1px solid var(--aegis-border); }
+.search-result-file-matched-text, .search-result .search-result-file-matched-text { background-color: var(--text-highlight-bg); color: #000000; }
+
+/* Settings */
+.modal, .modal-container .modal { border: var(--aegis-hairline) solid var(--aegis-border); border-radius: 0; }
+.setting-item { border-top: 1px solid var(--aegis-border); }
+.setting-item-name { font-weight: 700; }
+.setting-item-description { color: var(--aegis-muted); }
+.vertical-tab-nav-item.is-active { border-left: 6px solid var(--aegis-accent); font-weight: 700; }
+
+/* Tabs */
+.workspace-tab-header { border: 1px solid transparent; }
+.workspace-tab-header.is-active { border: var(--aegis-hairline) solid var(--aegis-border); border-bottom-color: var(--aegis-bg); }
+.workspace-tab-header-inner-title { font-weight: 600; }
+.workspace-tab-header.is-active .workspace-tab-header-inner-title { font-weight: 800; }
+
+/* Navigation */
+.nav-file-title, .nav-folder-title { border-radius: 0; }
+.nav-file-title.is-active, .nav-folder-title.is-active { border-left: 6px solid var(--aegis-accent); font-weight: 700; }
+.tree-item-self.is-selected { background-color: var(--background-modifier-hover); }
+
+/* Keyboard focus: thick solid ring plus a background-coloured underlay so the
+   focus state reads by shape alone, never colour alone. */
+:focus-visible {
+  outline: var(--aegis-focus-ring) solid var(--aegis-focus);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px var(--aegis-bg);
+}
+.workspace-tab-header:focus-visible,
+.nav-file-title:focus-visible,
+.clickable-icon:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: var(--aegis-focus-ring) solid var(--aegis-focus);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px var(--aegis-bg);
+}
+
+/* Narrow layout (<= 520px): keep tables/code legible without clipping */
+@media (max-width: 520px) {
+  .markdown-rendered h1 { font-size: 1.55em; }
+  .markdown-rendered h2 { font-size: 1.35em; }
+  .markdown-rendered table { display: block; overflow-x: auto; max-width: 100%; }
+  .markdown-rendered pre { overflow-x: auto; max-width: 100%; }
+  .markdown-rendered code { overflow-wrap: anywhere; }
+  .callout { padding-inline: 0.75em; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 0.001ms !important; animation-duration: 0.001ms !important; }
+}
